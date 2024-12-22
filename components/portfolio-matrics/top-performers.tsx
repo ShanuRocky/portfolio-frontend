@@ -18,8 +18,8 @@ export function TopPerformers({ stocks }: TopPerformersProps) {
     }))
     .sort((a, b) => b.performance - a.performance);
 
-  const topGainers = stocksWithPerformance.slice(0, 3);
-  const topLosers = [...stocksWithPerformance].reverse().slice(0, 3);
+  const topGainers = stocksWithPerformance.filter((stock) => stock.performance > 0).slice(0, 3);
+  const topLosers = [...stocksWithPerformance].filter((stock) => stock.performance < 0).reverse().slice(0, 3);
 
   return (
     <Card className="col-span-1">
