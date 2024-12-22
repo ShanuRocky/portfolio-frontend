@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Stock } from '@/types/stock';
 import { StockForm } from '@/components/stock-form';
 import { StockTable } from '@/components/stock-table';
@@ -17,24 +17,25 @@ export default function Home() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const { toast } = useToast();
 
-  useEffect(() => {
-    loadStocks();
-    const interval = setInterval(loadStocks, 60000); 
-    return () => clearInterval(interval);
-  }, []);
-
-  const loadStocks = async () => {
+  const loadStocks = useCallback(async () => {
     try {
       const data = await fetchStocks();
       setStocks(data);
-    } catch (error) {
+    } catch (_error) {
+      console.log(_error);
       toast({
         title: 'Error',
         description: 'Failed to fetch stocks',
         variant: 'destructive',
       });
     }
-  };
+  }, [toast]);
+
+  useEffect(() => {
+    loadStocks();
+    const interval = setInterval(loadStocks, 60000);
+    return () => clearInterval(interval);
+  }, [loadStocks]);
 
   const handleSubmit = async (data: Omit<Stock, 'id' | 'currentPrice'>) => {
     try {
@@ -50,7 +51,8 @@ export default function Home() {
         title: 'Success',
         description: `Stock ${editingStock ? 'updated' : 'added'} successfully`,
       });
-    } catch (error) {
+    } catch (_error) {
+      console.log(_error);
       toast({
         title: 'Error',
         description: `Failed to ${editingStock ? 'update' : 'add'} stock`,
@@ -72,7 +74,8 @@ export default function Home() {
         title: 'Success',
         description: 'Stock deleted successfully',
       });
-    } catch (error) {
+    } catch (_error) {
+      console.log(_error);
       toast({
         title: 'Error',
         description: 'Failed to delete stock',

@@ -38,7 +38,7 @@ export function PortfolioDistribution({ stocks }: PortfolioDistributionProps) {
               outerRadius={80}
               paddingAngle={0}
               dataKey="value"
-              label={({ name, value }) => `${name}`}
+              label={({ name }) => `${name}`}
             >
               {pieChartData.map((entry, index) => (
                 <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
