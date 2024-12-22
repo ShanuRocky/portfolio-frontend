@@ -30,12 +30,12 @@ This is the frontend of the Portfolio Tracker application, built with **Next.js*
    ```bash
    npm install
 
+4. Create .env.local file in root-directory and add:
+- NEXT_PUBLIC_API_URL=https://localhost:3001
+
 3. Run the development server:
    ```bash
    npm run dev
-
-4. Create .env.local file in root-directory and add:
-- NEXT_PUBLIC_API_URL=https://localhost:3001
 
 ## Assumptions and Limitations
 - The application relies on real-time stock data fetched from Yahoo Finance.
