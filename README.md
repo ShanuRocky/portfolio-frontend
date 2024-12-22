@@ -2,7 +2,7 @@
 
 This is the frontend of the Portfolio Tracker application, built with **Next.js**, **Tailwind CSS**, **TypeScript**, and **Shadcn UI**. The frontend is designed to provide a user-friendly interface for managing and tracking stock portfolios.
 
-## Features
+## 🌟 Features
 - **Responsive UI**: Optimized for both desktop and mobile devices.
 - **Stock Search**: Search for stocks using their ticker symbols, fetching real-time data from Yahoo Finance.
 - **Portfolio Overview**: Displays portfolio value, total investment, gain/loss, and percentage distribution.
@@ -10,14 +10,17 @@ This is the frontend of the Portfolio Tracker application, built with **Next.js*
 - **CRUD Operations**: Add, update, and delete stocks in the portfolio.
 - **Edit and Delete**: Ability to edit and delete stocks in the portfolio table.
 
-## Tech Stack
+## 🛠️ Tech Stack
 - **Next.js**: React framework for building the user interface.
 - **Tailwind CSS**: Utility-first CSS framework for styling.
 - **TypeScript**: Strongly typed JavaScript for better code quality.
 - **Shadcn UI**: Radix UI components styled with Tailwind CSS.
 - **Recharts**: For displaying charts like portfolio distribution and performance.
 
-## Installation
+## 📸 Screenshots
+- **Home Page**: <img width="1462" alt="Screenshot 2024-12-23 at 12 19 58 AM" src="https://github.com/user-attachments/assets/f607fc3f-7a0a-4e5a-805f-f0b170ce24f5" />
+
+## 🚀 Getting Started
 1. Clone the repository:
    ```bash
    git clone https://github.com/ShanuRocky/portfolio-frontend.git
