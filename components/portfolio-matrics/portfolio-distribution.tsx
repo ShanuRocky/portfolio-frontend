@@ -14,13 +14,22 @@ export function PortfolioDistribution({ stocks }: PortfolioDistributionProps) {
     value: (stock.currentPrice || stock.buyPrice) * stock.quantity,
   }));
 
-  const COLORS = [
-    'hsl(var(--chart-1))',
-    'hsl(var(--chart-2))',
-    'hsl(var(--chart-3))',
-    'hsl(var(--chart-4))',
-    'hsl(var(--chart-5))',
-  ];
+  const generateDynamicColors = (numColors: number) => {
+    const hueStep = 360 / numColors;
+    const baseSaturation = 70, baseLightness = 20;
+    const saturationStep = 10, lightnessStep = 5;
+  
+    return Array.from({ length: numColors }, (_, i) => {
+      const hue = (i * hueStep) % 360;
+      const saturation = Math.min(baseSaturation + i * saturationStep, 100);
+      const lightness = Math.min(baseLightness + i * lightnessStep, 100);
+      return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+    });
+  };
+  
+  
+  const COLORS = generateDynamicColors(stocks.length);
+  
 
   return (
     <Card className="col-span-1">

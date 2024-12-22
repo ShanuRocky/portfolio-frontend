@@ -88,7 +88,7 @@ export function StockForm({ onSubmit, initialData }: StockFormProps) {
                   </FormControl>
                 </PopoverTrigger>
                 <PopoverContent className="w-full p-0">
-                  <Command>
+                  <Command className='bg-black text-white'>
                     <CommandInput
                       placeholder="Search stock symbol..."
                       value={searchValue}
@@ -175,7 +175,7 @@ export function StockForm({ onSubmit, initialData }: StockFormProps) {
           )}
         />
 
-        <Button className='bg-black text-white' type="submit">Save Stock</Button>
+        <Button className='bg-black text-white hover:bg-gray-600' type="submit">Save Stock</Button>
       </form>
     </Form>
   );

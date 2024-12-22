@@ -90,7 +90,7 @@ export default function Home() {
         <h1 className="text-3xl font-bold">Portfolio Manager</h1>
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
-            <Button className='bg-black text-white'>
+            <Button className='bg-black text-white hover:bg-gray-600'>
               <Plus className="mr-2 h-4 w-4" />
               Add Stock
             </Button>
