@@ -1,5 +1,3 @@
-'use client';
-
 import { Stock } from '@/types/stock';
 import { PerformanceMetrics } from './performance';
 import { PortfolioDistribution } from './portfolio-distribution';

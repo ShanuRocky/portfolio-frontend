@@ -1,5 +1,3 @@
-'use client';
-
 import { Stock } from '@/types/stock';
 import {
   Table,
@@ -50,7 +48,7 @@ export function StockTable({ stocks, onEdit, onDelete }: StockTableProps) {
             <TableCell className="text-right">
               <span
                 className={
-                  calculateGainLoss(stock) >= 0 ? 'text-green-600' : 'text-red-600'
+                  calculateGainLoss(stock) >= 0 ? 'text-green-700' : 'text-red-700'
                 }
               >
                 {calculateGainLoss(stock).toFixed(2)}%
@@ -60,6 +58,7 @@ export function StockTable({ stocks, onEdit, onDelete }: StockTableProps) {
               <Button
                 variant="ghost"
                 size="icon"
+                title='update'
                 onClick={() => onEdit(stock)}
                 className="mr-2"
               >
@@ -68,6 +67,7 @@ export function StockTable({ stocks, onEdit, onDelete }: StockTableProps) {
               <Button
                 variant="ghost"
                 size="icon"
+                title='delete'
                 onClick={() => onDelete(stock.id)}
               >
                 <Trash2 className="h-4 w-4" />

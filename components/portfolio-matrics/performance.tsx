@@ -1,5 +1,3 @@
-'use client';
-
 import { Stock } from '@/types/stock';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { TrendingUp, TrendingDown, DollarSign, Percent } from 'lucide-react';
@@ -52,13 +50,13 @@ export function PerformanceMetrics({ stocks }: PerformanceMetricsProps) {
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
           <CardTitle className="text-sm font-medium">Total Gain/Loss</CardTitle>
           {totalGainLoss >= 0 ? (
-            <TrendingUp className="h-4 w-4 text-green-500" />
+            <TrendingUp className="h-4 w-4 text-green-700" />
           ) : (
-            <TrendingDown className="h-4 w-4 text-red-500" />
+            <TrendingDown className="h-4 w-4 text-red-700" />
           )}
         </CardHeader>
         <CardContent>
-          <div className={`text-2xl font-bold ${totalGainLoss >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+          <div className={`text-2xl font-bold ${totalGainLoss >= 0 ? 'text-green-700' : 'text-red-700'}`}>
             ${Math.abs(totalGainLoss).toFixed(2)}
           </div>
           <p className="text-xs text-muted-foreground">Absolute gain/loss</p>
@@ -71,7 +69,7 @@ export function PerformanceMetrics({ stocks }: PerformanceMetricsProps) {
           <Percent className="h-4 w-4 text-muted-foreground" />
         </CardHeader>
         <CardContent>
-          <div className={`text-2xl font-bold ${percentageReturn >= 0 ? 'text-green-500' : 'text-red-500'}`}>
+          <div className={`text-2xl font-bold ${percentageReturn >= 0 ? 'text-green-700' : 'text-red-700'}`}>
             {percentageReturn.toFixed(2)}%
           </div>
           <p className="text-xs text-muted-foreground">Total return percentage</p>

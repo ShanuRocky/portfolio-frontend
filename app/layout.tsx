@@ -1,6 +1,5 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Providers } from './providers';
 import { Toaster } from '@/components/ui/toaster';
 
 
@@ -17,10 +16,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className='bg-white text-black'>
-        <Providers>
           {children}
           <Toaster />
-        </Providers>
       </body>
     </html>
   );

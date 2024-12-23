@@ -1,5 +1,3 @@
-'use client';
-
 import { Stock } from '@/types/stock';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { TrendingUp, TrendingDown } from 'lucide-react';
@@ -29,26 +27,26 @@ export function TopPerformers({ stocks }: TopPerformersProps) {
       <CardContent>
         <div className="space-y-6">
           <div>
-            <h4 className="text-sm font-medium text-muted-foreground mb-3">Top Gainers</h4>
+            <h1 className="text-sm font-medium text-muted-foreground mb-3">Top Gainers</h1>
             {topGainers.map(stock => (
               <div key={stock.id} className="flex items-center justify-between mb-2">
                 <div className="flex items-center">
-                  <TrendingUp className="h-4 w-4 text-green-500 mr-2" />
+                  <TrendingUp className="h-4 w-4 text-green-700 mr-2" />
                   <span className="font-medium">{stock.ticker}</span>
                 </div>
-                <span className="text-green-500">+{stock.performance.toFixed(2)}%</span>
+                <span className="text-green-700">+{stock.performance.toFixed(2)}%</span>
               </div>
             ))}
           </div>
           <div>
-            <h4 className="text-sm font-medium text-muted-foreground mb-3">Top Losers</h4>
+            <h1 className="text-sm font-medium text-muted-foreground mb-3">Top Losers</h1>
             {topLosers.map(stock => (
               <div key={stock.id} className="flex items-center justify-between mb-2">
                 <div className="flex items-center">
-                  <TrendingDown className="h-4 w-4 text-red-500 mr-2" />
+                  <TrendingDown className="h-4 w-4 text-red-700 mr-2" />
                   <span className="font-medium">{stock.ticker}</span>
                 </div>
-                <span className="text-red-500">{stock.performance.toFixed(2)}%</span>
+                <span className="text-red-700">{stock.performance.toFixed(2)}%</span>
               </div>
             ))}
           </div>
