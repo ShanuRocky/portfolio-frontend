@@ -9,6 +9,7 @@ This is the frontend of the Portfolio Tracker application, built with **Next.js*
 - **Charts**: Pie chart for portfolio distribution, and tables for top performers and losers.
 - **CRUD Operations**: Add, update, and delete stocks in the portfolio.
 - **Edit and Delete**: Ability to edit and delete stocks in the portfolio table.
+- **Real time Update**: Fetches the stock prices of the stocks every minute to get updated.
 
 ## 🛠️ Tech Stack
 - **Next.js**: React framework for building the user interface.
