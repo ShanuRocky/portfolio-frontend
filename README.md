@@ -41,6 +41,10 @@ This is the frontend of the Portfolio Tracker application, built with **Next.js*
 - The application relies on real-time stock data fetched from Yahoo Finance.
 - Stock data updates every minute.
 - The application assumes valid stock ticker symbols for search functionality.
+- Render often "spin down" your application when it's inactive for a certain period.
+When a new request comes in, the service needs to "spin up" the application again, 
+leading to cold start delays, which can significantly increase response times for the first request.
+
 
 ## Deployed Application
 - Website: https://portfoliomanager-one.vercel.app/
